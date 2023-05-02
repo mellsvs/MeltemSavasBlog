@@ -1,0 +1,56 @@
+Siteyi genel olak kenidimi tanıttığım bir blog sitesi olarak tasarladım.
+Tasarım sürecinde menü olarak Js kütüphanesinden hamburger menü kullandım ve site boyutunu
+responsive ayarladım. Küçüldüğü zaman hamburger menü görünümüne geçmektedir.
+Ana ekranda kısaca blog sayfamı tanıtıyorum ve hakkımda kısmına yönlendiriyorum.
+Hakkımda kısmında ise cv bilgim yer almakta tıklandığı zaman link olarak açılmaktadır.
+Fotograf çekmeyi çok sevdiğim için bir de postlar kısmı yapmak ve fotoğraflara yer vermek istedim.
+Fotoğraf,başlığı,içeriği ve yıldızı hepsi bir div elementinin içinde bulunuyor.
+En altta footer kısmına ; linkedin ve instagram hesaplarını ekledim,
+ tarih saat bilgisi için de bir alan oluşturdum. 
+
+ANA SAYFA 
+-- saat ve tarih gösterimi ---
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+head etiketi içerisine ekledim.
+moment.min.js olarak da projemin içerisine ekledim.
+   <script src="moment.min.js"></script>
+   diyerek çağırıyorum
+    <div class="datetime-container"></div>
+    datetime-container elementine style verdim.
+
+---CIRCLE FOTO--
+Fotoğrafı circle içinde göstermek için
+div öğesi .ring sınıfıyla işaretledim ve içinde bir daire çizmek için 
+border-radius ve border özelliklerini kullandım.
+iki tane çember için iki tane ring sınıfı oluşturdum.
+Her iki dairenin içinde, .circle ve .circle-two sınıflarıyla işaretlenen,
+birbirine paralel iki çizgi bulunur. 
+Bu çizgiler, position: absolute özelliği ile tanımlanır ve top ve left özellikleri
+kullanılarak dairelerin merkezine konumlandırılır. 
+Bu çizgiler,transform-origin özelliği kullanılarak sola doğru döndürülür ve
+animation özelliği kullanılarak sürekli olarak döndürülürler
+
+
+
+HAKKIMDA
+-- Fotoğraf gelirken açılma süreci--
+yazdığım js kodu
+$(document).ready(function() {
+  $("#kimimben").addClass("animate");
+  });
+  style bilgileri
+
+#kimimben{
+  animation: infofoto 1s;
+}
+
+@keyframes infofoto {
+  from { height: 50px; }
+  to { bottom: 900px; }
+}
+POSTLAR
+---Blog görünümü---
+Blog görünümü sağlayabilmek için divlere böldüm.
+Bir post sağ tarafa dayalı diğeri sol dayalı olarak gelmektedir.
+
